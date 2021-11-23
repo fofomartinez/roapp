@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Roapp.Vistas.Valarma"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ScrollView>
+        <Grid RowDefinitions="150,300,50,*"
+          BackgroundColor="#E9EDF3">
+            <degradado:PancakeView Grid.Row="0"
+                               BackgroundColor="White"
+                               CornerRadius="0,0,30,30">
+                <Frame Margin="15,30,15,30"
+                   CornerRadius="15" HasShadow="False">
+                    <Frame.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFEFBA"
+                                      Offset="0.1"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout>
+                        <Grid ColumnDefinitions="*,100">
+                            <StackLayout Grid.Column="0"
+                                     VerticalOptions="Center">
+
+                                <StackLayout Orientation="Horizontal"
+                                         >
+                                    <Label Text="RO"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       CharacterSpacing="10"
+                                       VerticalOptions="CenterAndExpand"
+                                           TextColor="#7c100d"/>
+                                    <Button Text="APP"
+                                        BackgroundColor="#3AC04B"
+                                        TextColor="White"
+                                        CornerRadius="15"
+                                        FontAttributes="Bold"
+                                        FontSize="20"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            <Image Grid.Column="1"
+                               Source="https://i.ibb.co/T05Pbkm/pantalla-3d.png"
+                               HorizontalOptions="End"
+                               Margin="0,10,0,0"
+                               />
+
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </degradado:PancakeView>
+
+
+            <StackLayout Grid.Row="1"
+                         BackgroundColor="Transparent">
+
+                <Image Source="https://i.ibb.co/ZWfPT88/durmiendo.png"
+                       Margin="0,100,0,0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       x:Name="imgdormir"/>
+
+                <Image Source="https://i.ibb.co/D8WLTrN/sirena.png"
+                       Margin="0,100,0,0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       x:Name="imgalarma"
+                       IsVisible="false"/>
+
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="2"
+                         BackgroundColor="Transparent">
+                <Label Text="SE HA DETECTADO UN SISMO"
+                       CharacterSpacing="3"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       TextColor="Red"
+                       x:Name="txtsismo"
+                       IsVisible="false"/>
+
+                <Label Text="SE HA DETECTADO UN HURACÁN"
+                       CharacterSpacing="3"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       TextColor="Red"
+                       x:Name="txthuracan"
+                       IsVisible="false"/>
+
+                <Label Text="DETECTAMOS INUNDACIONES CERCANAS"
+                       VerticalTextAlignment="Center"
+                       
+                       CharacterSpacing="3"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       TextColor="Red"
+                       x:Name="txtinundacion"
+                       IsVisible="false"/>
+
+                <Label Text="ALARMA ACTIVA, ESTAR ATENTOS"
+                       CharacterSpacing="3"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       TextColor="Red"
+                       x:Name="txtalarma"
+                       IsVisible="false"/>
+
+            </StackLayout>
+            
+            <StackLayout Grid.Row="3"
+                         Margin="0,50,0,0">
+                
+
+                <ImageButton Source="https://i.ibb.co/sFrYqb4/power.png"
+                        HeightRequest="50"
+                        BackgroundColor="Transparent"
+                        Clicked="btnoff_Clicked"
+                        x:Name="btnoff"/>
+
+                <ImageButton Source="https://i.ibb.co/Z21vbfn/power-on.png"
+                        HeightRequest="50"
+                        BackgroundColor="Transparent"
+                        Clicked="btnon_Clicked"
+                        IsVisible="false"
+                        x:Name="btnon"/>
+
+            </StackLayout>
+
+            
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

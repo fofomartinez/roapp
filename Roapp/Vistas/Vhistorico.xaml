@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Roapp.Vistas.Vhistorico"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ScrollView>
+        <Grid RowDefinitions="260,50,410"
+          BackgroundColor="#E9EDF3">
+            <degradado:PancakeView Grid.Row="0"
+                               BackgroundColor="White"
+                               CornerRadius="0,0,30,30">
+                <Frame Margin="15,30,15,30"
+                   CornerRadius="15" HasShadow="False">
+                    <Frame.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFEFBA"
+                                      Offset="0.1"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout>
+                        <Label Text="Registros"
+                           FontAttributes="Bold"
+                           FontSize="25"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#09553E"
+                           />
+                        <Grid ColumnDefinitions="*,100">
+                            <StackLayout Grid.Column="0"
+                                     VerticalOptions="Center">
+
+                                <StackLayout Orientation="Horizontal"
+                                         >
+                                    <Label Text="RO"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       CharacterSpacing="10"
+                                       VerticalOptions="CenterAndExpand"
+                                           TextColor="#7c100d"/>
+                                    <Button Text="APP"
+                                        BackgroundColor="#3AC04B"
+                                        TextColor="White"
+                                        CornerRadius="15"
+                                        FontAttributes="Bold"
+                                        FontSize="20"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            <Image Grid.Column="1"
+                               Source="https://i.ibb.co/T05Pbkm/pantalla-3d.png"
+                               HorizontalOptions="End"
+                               Margin="0,10,0,0"
+                               />
+
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </degradado:PancakeView>
+
+            <StackLayout Grid.Row="1"
+                         Margin="15,5,15,0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         >
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1" Text="HSTORIAL DE ALERTAS ACTIVAS"
+                       TextColor="#1e1e1e"
+                           VerticalOptions="Center"/>
+
+                    <ImageButton Grid.Column="0" Source="https://i.ibb.co/3T8yM5p/mas.png "
+                                 BackgroundColor="Transparent"
+                                 
+                                 Command="{Binding Navegarnewhistoricocommand}"/>
+                    
+                </Grid>
+
+
+
+
+            </StackLayout>
+
+            <CollectionView Grid.Row="2"
+                            Margin="15,15,15,15" x:Name="historico">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="https://i.ibb.co/RydRmjf/relo.png"
+                                   Grid.Row="0"
+                                   Grid.Column="0"/>
+
+                            <Label Text="{Binding Fecha}"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="15"
+                                   FontAttributes="Bold"
+                                   BackgroundColor="#C5F83B"
+                                   TextColor="Black"/>
+
+                            <Image Source="https://i.ibb.co/yV3t3Bm/ubicacion.png"
+                                   Grid.Row="1"
+                                   Grid.Column="0"/> 
+
+
+                            <Label Text="{Binding Ubicacion}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="15"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"/>
+
+                            <Image Source="https://i.ibb.co/b5Kb15p/sensor.png"
+                                   Grid.Row="2"
+                                   Grid.Column="0"/>
+
+                            <Label Text="{Binding Tipo}"
+                                   Grid.Row="2"
+                                   Grid.Column="1"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="35"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"/>
+
+
+                        </Grid>
+                        
+                    </DataTemplate>
+                    
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+
+
+
+
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Roapp.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ScrollView>
+        <Grid RowDefinitions="260,auto,auto,*"
+          BackgroundColor="#E9EDF3">
+            <degradado:PancakeView Grid.Row="0"
+                               BackgroundColor="White"
+                               CornerRadius="0,0,30,30">
+                <Frame Margin="15,30,15,30"
+                   CornerRadius="15" HasShadow="False">
+                    <Frame.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFEFBA"
+                                      Offset="0.1"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout>
+                        <Label Text="BIENVENIDOS"
+                           FontAttributes="Bold"
+                           FontSize="25"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#09553E"
+                           />
+                        <Grid ColumnDefinitions="*,100">
+                            <StackLayout Grid.Column="0"
+                                     VerticalOptions="Center">
+
+                                <StackLayout Orientation="Horizontal"
+                                         >
+                                    <Label Text="RO"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       CharacterSpacing="10"
+                                       VerticalOptions="CenterAndExpand"
+                                           TextColor="#7c100d"/>
+                                    <Button Text="APP"
+                                        BackgroundColor="#3AC04B"
+                                        TextColor="White"
+                                        CornerRadius="15"
+                                        FontAttributes="Bold"
+                                        FontSize="20"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            <Image Grid.Column="1"
+                               Source="https://i.ibb.co/T05Pbkm/pantalla-3d.png"
+                               HorizontalOptions="End"
+                               Margin="0,10,0,0"
+                               />
+
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </degradado:PancakeView>
+
+            <StackLayout Grid.Row="1"
+                         Margin="15,20,15,0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                <Label Text="MENU PRINCIPAL"
+                       TextColor="#1e1e1e"/>
+            </StackLayout>
+            <Frame Grid.Row="2"
+               CornerRadius="20"
+               Margin="15,0,15,0"
+               HasShadow="False"
+              >
+                <Grid ColumnDefinitions="*,*,*"
+                  VerticalOptions="Center">
+                    <StackLayout Grid.Column="0">
+                        <Frame CornerRadius="25"
+                           HasShadow="False"
+                           BackgroundColor="#EEF1FD"
+                           Padding="0"
+                           HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/MMscmW7/alerta.png"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="50"
+                                     HorizontalOptions="Center"
+                                     Padding="8"
+                                     />
+                        </Frame>
+                        <Label Text="ALARMA"
+                           HorizontalOptions="Center"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"
+                           VerticalOptions="Center"
+                               TextColor="#1e1e1e"/>
+
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavegarAlarmacommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <Frame CornerRadius="25"
+                           HasShadow="False"
+                           BackgroundColor="#EEF1FD"
+                           Padding="0"
+                           HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/9VTFP6T/historico.png"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="50"
+                                     
+                                     HorizontalOptions="Center"
+                                     Padding="8"
+                                     />
+                        </Frame>
+                        <Label Text="HISTÓRICO"
+                           HorizontalOptions="Center"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"
+                           VerticalOptions="Center"
+                               TextColor="#1e1e1e"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Navegarhistoricocommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2">
+                        <Frame CornerRadius="25"
+                           HasShadow="False"
+                           BackgroundColor="#EEF1FD"
+                           Padding="0"
+                           HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/m5RPyBW/mapa.png"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="50"
+                                     
+                                     HorizontalOptions="Center"
+                                     Padding="8"
+                                     />
+                        </Frame>
+                        <Label Text="MAPA-SEGURO"
+                           HorizontalOptions="Center"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"
+                           VerticalOptions="Center"
+                               TextColor="#1e1e1e"/>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavegarGeocommand}"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <Image Source="https://i.ibb.co/DMLFcXW/montanas.png"
+               Grid.Row="3"
+               Margin="0,10,20,-100"/>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

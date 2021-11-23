@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Roapp.Vistas.Vgeolocalizacion"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps">
+    <ScrollView>
+        <Grid RowDefinitions="150,50,480,*"
+          BackgroundColor="#E9EDF3">
+            <degradado:PancakeView Grid.Row="0"
+                               BackgroundColor="White"
+                               CornerRadius="0,0,30,30">
+                <Frame Margin="15,30,15,30"
+                   CornerRadius="15" HasShadow="False">
+                    <Frame.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFEFBA"
+                                      Offset="0.1"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                            <GradientStop Color="#FFFFFF"
+                                      Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout>
+                        <Grid ColumnDefinitions="*,100">
+                            <StackLayout Grid.Column="0"
+                                     VerticalOptions="Center">
+
+                                <StackLayout Orientation="Horizontal"
+                                         >
+                                    <Label Text="RO"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       CharacterSpacing="10"
+                                       VerticalOptions="CenterAndExpand"
+                                           TextColor="#7c100d"/>
+                                    <Button Text="APP"
+                                        BackgroundColor="#3AC04B"
+                                        TextColor="White"
+                                        CornerRadius="15"
+                                        FontAttributes="Bold"
+                                        FontSize="20"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            <Image Grid.Column="1"
+                               Source="https://i.ibb.co/T05Pbkm/pantalla-3d.png"
+                               HorizontalOptions="End"
+                               Margin="0,10,0,0"
+                               />
+
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </degradado:PancakeView>
+
+            <StackLayout Grid.Row="1">
+                <Button Text="Confirmar"
+                        TextTransform="None"
+                        BackgroundColor="White"
+                        TextColor="#7c100d"
+                        CornerRadius="15"
+                        FontAttributes="Bold" Margin="0,0,0,0"
+                        />
+
+            </StackLayout>
+
+            <maps:Map Grid.Row="2"
+                      x:Name="map"
+                      HasZoomEnabled="True"
+                      PinDragEnd="map_PinDragEnd"/>
+
+
+            
+        </Grid>
+    </ScrollView>
+
+
+</ContentPage>
